@@ -6,37 +6,38 @@ You are tasked with developing a web application which will enable users to find
 wellbeing and set themselves goals to help enhance their sense of wellbeing.
 
 The application should allow the users to do the following:
-  • Anyone should be able to browse to the site and view an About Us page with information about
+  * Anyone should be able to browse to the site and view an About Us page with information about
     the application
-  • Individuals should be able to register for the application
-  • Registered users should be able to login and
-  • view information about nutrition, fitness and a healthy lifestyle
-  • define a series of personal goals in each category (nutrition, fitness, healthy lifestyle)
-  • add, remove and modify their own personal goals for several weeks ahead
-  • record the achievement of their own personal goals when they occur. e.g. goals can be
-  ticked off or actual times or number of repetitions can be recorded
-  • review a history of their own personal achievements
+  * Individuals should be able to register for the application
+  * Registered users should be able to login and
+  * view information about nutrition, fitness and a healthy lifestyle
+  * define a series of personal goals in each category (nutrition, fitness, healthy lifestyle)
+  * add, remove and modify their own personal goals for several weeks ahead
+  * record the achievement of their own personal goals when they occur. e.g. goals can be
+    ticked off or actual times or number of repetitions can be recorded
+  * review a history of their own personal achievements
 
 # Data Structure Changes
 Originally I had planned to have 3 data structures for users, goals and achievements which I have kept in place by having 3 models that represent these.
 
 During development circumsttances had changed due to time contraints and troubles during implementation so altering the data strucure could allow me to have more features implemented while taking out some unneccesary added features that were included during the planning phase. The structure still consists of the main requirments of the project and I have updated them below:
-
-Goals: {
+```
+ Goals: { 
    goal: string,
    category: [string]
    target: [string]
    user: string,
    achieved: Boolean
-}
-
+} 
+```
+```
 Users: {
    email: string,
    username: string,
    password: string
 }
-
-
+```
+```
 Achievements: {
     goal: string,
     category: [string],
@@ -44,7 +45,7 @@ Achievements: {
     user: string,
     achieved: Date()
 }
-
+```
 
 # Design Changes
 On the splash screen when a user is not logged in, I decided to add some interactive images that reveal text when hovered over, this ultimately was to make new users to the website feel engaged and want to sign up for an account. This has helped make the website more welcoming as the inital design was bland and too much text without being very interesting.
@@ -68,12 +69,12 @@ https://thinkwellness.herokuapp.com/
 There has been two default users created with some goals and achievements pre set. These can be access using the credentials below or create your own account!
 
 **Account 1:**
-username: harry.ross
-password: password
+* username: harry.ross
+* password: password
 
 **Account 2:**
-username: hannah.smith
-password: password
+* username: hannah.smith
+* password: password
 
 
 # How to locally setup the website
@@ -83,12 +84,12 @@ https://github.com/tmcgon201/WAD2WellnessApp.git
 You can do "git clone https://github.com/tmcgon201/WAD2WellnessApp.git" to locally bring down the data.
 
 **Initalise**
-  • Run "npm install" from terminal to install packages
-  • Run "node index.js" to start the application on local server
-      • Alternatively is nodemon is installed it can be done through this
-  • Website should be viewable on localhost:3000
-  • You can access the application contents through either creating a new user or viewing the already setup default users (credientials noted above)
-  • Log in token will expire before 10minutes and will require you to re-log in
+  * Run "npm install" from terminal to install packages
+  * Run "node index.js" to start the application on local server
+      * Alternatively is nodemon is installed it can be done through this
+  * Website should be viewable on localhost:3000
+  * You can access the application contents through either creating a new user or viewing the already setup default users (credientials noted above)
+  * Log in token will expire before 10minutes and will require you to re-log in
   
   
   
