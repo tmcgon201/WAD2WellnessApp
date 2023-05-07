@@ -1,0 +1,87 @@
+<style>
+body {
+  overflow: hidden;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+th {
+  background-color: 98fbca;
+  color: black;
+  text-align: left;
+  padding: 10px;
+}
+
+td, th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+</style>
+
+<%- include('header.ejs') %>
+    <section id="createGoals" class="container px-4 pb-5 pt-4" style="background-color:#F9F9F9; height:88.5vh;">
+      <h3 class='text-center pb-4 font-weight-light'><strong><%= user.username %> 's Goals!</strong></h3>
+        <div class="text-center pb-2 font-weight-light">
+        <p><strong>We want to support you in reaching your fullest potential. View, edit and delete your goals!</strong></p>
+        <div class="row">
+            <div class="pt-3 col row">
+                <div class="col-md-6 col-sm-1"></div>
+                <div class="col-md-1 col-sm-0"></div>
+                <div class="col-md-5 col-sm-10 row">
+                    <div class="px-0 col-4"><a class="fa-solid fa-plus pr-1" href="/addGoal" style="text-decoration: none; color:black"></a>Add Goal</div>
+                    <div class="px-0 col-4"><a class="fa-solid fa-pencil pr-1" href="/editGoals" style="text-decoration: none; color:black"></a>Edit Goals</div>
+                    <div class="px-0 col-4"><a class="fa-solid fa-minus pr-1" href="/deleteGoal" style="text-decoration: none; color:black"></a>Remove goal</div>
+                </div>
+            </div> 
+        </div>
+        <br>
+        <form method="POST" action="/createGoals">
+          <div class="table-responsive">
+            <table>
+                <thead>
+                  <tr>
+                    <th>Goal</th>
+                    <th>Category</th>
+                    <th>Target</th>
+                    <th>Achieved?</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% goals.forEach(goal => { %>
+                    <tr>
+                      <td data-goal="<%= goal.goal %>" name="goal"><%= goal.goal %></td>
+                      <td data-category="<%= goal.category %>" name="category"><%= goal.category %></td>
+                      <td data-target="<%= goal.target %>" name="target"><%= goal.target %></td>
+                      <td data-user="<%= goal.achieved %>" name="achieved">
+                        <input type="checkbox" <% if (goal.achieved) { %> checked <% } %>
+                          name="achievedGoals" value="<%= goal._id %>" />
+                        <input type="hidden" name="goal" value="<%= goal.goal %>" data-goal-id="<%= goal._id %>" />
+                        <input type="hidden" name="category" value="<%= goal.category %>" data-goal-id="<%= goal._id %>" />
+                        <input type="hidden" name="target" value="<%= goal.target %>" data-goal-id="<%= goal._id %>" />
+                      </td>
+                    </tr>                 
+                  <% }) %>
+                </tbody>
+              </table>
+            </div>
+            <br>
+            <div class="text-center mx-auto">
+              <input style="background-color:#98fbca" type="submit" class="btn btn-block shadow-sm" value="Check Achieved">
+          </div>
+          </form>
+          <br>
+    </section>
+<%- include('footer.ejs') %>
+

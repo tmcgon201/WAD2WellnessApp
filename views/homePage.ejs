@@ -1,0 +1,219 @@
+
+
+<%- include('header.ejs'); %>
+<!-- about -->
+<style>
+    .text-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: black;
+      opacity: 0;
+      transition: opacity 0.5s, transform 0.5s;
+    }
+
+    .text-overlay p {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .below-image {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 1%;
+      text-align: center;
+    }
+
+    .factinfo {
+      color: black;
+      text-shadow: white;
+      text-decoration-color: black;
+      font-size: 1px;
+    }
+
+    #menu {
+      margin-left: 0px;
+    }
+    .info-nutrition,
+    .info-healthy-lifestyle,
+    .info-fitness {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .info-nutrition h3,
+    .info-healthy-lifestyle h3,
+    .info-fitness h3 {
+        margin-bottom: 1px;
+        margin-top: 1px;
+    }
+</style>
+    <section id="about" class="container p-5" style="background-color:#F9F9F9">
+        <!-- heading -->
+        <h3 class='text-center pb-4 font-weight-light'><strong>Welcome to your home page!</strong></h3>
+        <div class="text-center font-weight-light">
+        <p><strong>Select an option to go to that page or scroll down and view some of our regularly updated information.</strong></p>
+        <section id="menu" class="container p-3">
+            <div class="row justify-content-center">
+                <div class="col-md-3 col-6 text-center">
+                    <form id="create-goals-form" action="/createGoals" method="GET">
+                        <button class="btn btn-block shadow-sm" style='background-color:#98fbca' type="submit">Personal Goals</button>
+                    </form>
+                </div>
+                <div class="col-md-3 col-6 text-center">
+                    <form id="record-achievement-form" action="/recordNewAchievement" method="GET">
+                        <button class="btn btn-block shadow-sm" style='background-color:#98fbca' type="submit">Record Achievement</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <br>
+        </div>
+        <!-- temp buttons to get screens down-->
+        <div class='row'>
+            <div class='col-md-6 col-sm-12 pr-5 row'>
+                <!-- information -->
+                <div class="col-12">
+                    <h4 class='font-weight-light'>Introduction</h4>
+                <p>This is our home page where we strive to provide reliable, evidence-based information and resources that empower our members to take control of their health and well-being. </p>
+                <p>We understand that making positive changes can be challenging, but we believe that with the right information, tools, and support, anyone can achieve their goals. </p>
+                </div>
+            
+            </div>
+            <div class='col'>
+              <div class="col-12">
+                <h4 class='font-weight-light'>Services we provide</h4>
+                <ul>
+                    <li>See members only information about nutrition, fitness and  healthy lifestyle below!</li>
+                    <li>Set, edit and delete individual goals</li>
+                    <li>Record your personal achievements</li>
+                </ul>
+            </div>
+            </div>
+        </div>
+    </section> 
+    <section id="about" class="container p-5" style="background-color:#98fbca">
+        <section id="menu" class="container p-5">
+          <!-- intro -->
+          <h5 class='text-center pt-3 pb-2 font-weight-light'><strong>This is our regularly updated information, if you have any questions please contact us! </strong></h5>
+          <hr class="text-muted">
+          <section id="about" class="container p-5" style="background-color:#98fbca">
+            <div class="info-nutrition">
+              <h3 class="below-image"><u>Nutrition</u></h3>  
+              <br>
+              <p>Nutrition is a vital component of overall health and wellbeing. The food we eat provides our bodies with the nutrients they need to function properly, including energy, vitamins, minerals, and antioxidants. A balanced and varied diet is key to maintaining good health and preventing chronic diseases.<br>
+                <br>
+                One of the most important aspects of a healthy diet is balance. This means getting the right balance of macronutrients (carbohydrates, proteins, and fats) and micronutrients (vitamins and minerals) that our bodies need. Eating a variety of different foods from all the food groups is the best way to ensure you are getting all the nutrients you need.<br>
+                <br>
+                In general, a healthy diet should be based on whole, minimally processed foods, including plenty of fruits, vegetables, whole grains, lean proteins, and healthy fats. Processed foods, which are often high in added sugars, unhealthy fats, and sodium, should be limited.<br>
+                <br>
+                It's also important to pay attention to portion sizes. Eating too much of any food, even healthy foods, can lead to weight gain and other health problems. Using smaller plates and bowls, and eating slowly and mindfully, can help you feel satisfied with smaller amounts of food.<br>
+                <br>
+                In addition to a healthy diet, staying hydrated is also important for good health. Drinking plenty of water and other fluids can help maintain proper hydration, which is essential for many bodily functions.<br>
+                <br>
+                Overall, good nutrition is a cornerstone of good health. By making healthy food choices and paying attention to portion sizes, you can ensure that your body is getting the nutrients it needs to function at its best.<br>
+                </p> 
+            </div>
+            <br><br>
+            <div class="info-healthy-lifestyle">
+              <h3 class="below-image"><u>Healthy lifestyle</u></h3>   
+              <br>
+              <p>Living a healthy lifestyle is about making positive choices that promote physical, mental, and emotional wellbeing. This can include a variety of factors, such as a healthy diet, regular exercise, stress management, and getting enough sleep.<br>
+                <br>
+                One of the most important aspects of a healthy lifestyle is a balanced and varied diet. Eating a diet rich in whole, minimally processed foods, including plenty of fruits, vegetables, whole grains, lean proteins, and healthy fats, can help provide your body with the nutrients it needs to function properly.<br>
+                <br>
+                Regular exercise is also an important part of a healthy lifestyle. Aim for at least 150 minutes of moderate-intensity exercise or 75 minutes of vigorous-intensity exercise per week, spread out over several days. Incorporating a variety of different types of exercise, such as cardio, strength training, and flexibility exercises, can help improve overall fitness and health.<br>
+                <br>
+                Stress management is also an important part of a healthy lifestyle. Chronic stress can have negative effects on both physical and mental health, so finding ways to manage stress, such as through meditation, deep breathing, or yoga, can be helpful.<br>
+                <br>
+                Getting enough sleep is also important for overall health and wellbeing. Aim for 7-8 hours of sleep per night, and try to establish a consistent sleep schedule to promote healthy sleep habits.<br>
+                <br>
+                In addition to these factors, avoiding unhealthy habits like smoking and excessive alcohol consumption, and practicing good hygiene, such as washing your hands regularly and practicing safe sex, can also contribute to a healthy lifestyle.<br>
+                <br>
+                Overall, living a healthy lifestyle is about making positive choices that promote physical, mental, and emotional wellbeing. By incorporating healthy habits into your daily routine, you can improve your overall health and quality of life.</p>
+            </div>
+            <br><br>
+            <div class="info-fitness">
+                <h3 class="below-image"><u>Fitness</u></h3>   
+                <br>
+                <p>Fitness is an important aspect of overall health and wellbeing. Regular exercise can help improve cardiovascular health, boost mood and mental health, and help maintain a healthy weight. There are many different types of exercise, from cardio to strength training to yoga and more, so it's important to find the types that work best for you.<br>
+                    <br>
+                    Cardiovascular exercise, also known as cardio, is any type of exercise that gets your heart rate up and increases your breathing rate. This can include activities like running, biking, swimming, or dancing. Cardiovascular exercise can help improve heart health and endurance, and can also help burn calories and promote weight loss.<br>
+                    <br>
+                    Strength training, or resistance training, involves using weights or resistance bands to build muscle strength and endurance. Strength training can help improve bone density, muscle mass, and overall strength, and can also help boost metabolism and promote weight loss.<br>
+                    <br>
+                    Flexibility exercises, like yoga or stretching, can help improve mobility, reduce the risk of injury, and promote relaxation and stress relief. Incorporating flexibility exercises into your routine can also help improve posture and balance.<br>
+                    <br>
+                    It's important to find types of exercise that you enjoy and that fit into your lifestyle. Aim for at least 150 minutes of moderate-intensity exercise or 75 minutes of vigorous-intensity exercise per week, spread out over several days. It's also important to listen to your body and rest when needed, and to seek advice from a healthcare professional before starting a new exercise routine, especially if you have any health concerns or medical conditions.<br>
+                    <br>
+                    By incorporating regular exercise into your routine, you can improve your overall health and wellbeing, boost energy and mood, and reduce the risk of chronic diseases.</p>
+            </div>
+          </section>
+        </section>
+    </section>
+    <!-- contact form -->
+    <section id="contact" class="container px-4 py-5" style="background-color:#F9F9F9">
+        <!-- heading -->
+        <h3 class='text-center pb-1 font-weight-light'><strong>CONTACT</strong></h3>
+        <h6 class='text-center font-weight-normal pt-3'>If you have any further queries, please contact us using the form below.</h6>
+        <h6 class='text-center font-weight-normal pb-3'>We aim to respond to every enquiry within 3 business days.</h6>
+        <div class="row mx-auto w-50 bg-white rounded shadow-sm pb-4">
+            <div class="col mx-auto pb-3">
+                <!-- form -->
+                <form id="contact-form" name="contact-form" action="/sendEmail" method="POST">
+                    <div class="row mb-3 mt-3">
+                        <!-- contact name -->
+                        <div class="col-md-6">
+                            <div class="md-form">
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Name" required/>
+                            </div>
+                        </div>
+                        <!-- contact email -->
+                        <div class="col-md-6">
+                            <div class="md-form">
+                                <input type="text" id="email" name="email" class="form-control" placeholder="Email" required/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <!-- message subject -->
+                        <div class="col-md-12">
+                            <div class="md-form">
+                                <input type="text" id="subject" name="subject" class="form-control" placeholder="Subject" required/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <!-- message -->
+                        <div class="col-md-12">
+                            <div class="md-form">
+                                <textarea type="text" id="message" name="message" rows="2"
+                                    class="form-control md-textarea" placeholder="Your message" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <% if (typeof user !="undefined"){%>
+                        <div class="row mb-3 d-none">
+                            <!-- pass info to server to determine what route to redirect to -->
+                            <div class="col-md-12">
+                                <div class="md-form">
+                                    <input class="form-check-input" type="checkbox" value="true" id="loggedin" name="loggedin" checked>
+                                </div>
+                            </div>
+                        </div>
+                    <%}%>
+                    <div class="text-center mx-auto">
+                        <button class="btn btn-block shadow-sm" style='background-color:#98fbca'
+                            type="submit">Send</button>
+                    </div>
+                </form>
+                <!-- submit -->
+                
+            </div>
+        </div>
+    </section>
+    <%- include('footer.ejs'); %>

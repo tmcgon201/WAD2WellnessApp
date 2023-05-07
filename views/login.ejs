@@ -1,0 +1,39 @@
+<%- include('header.ejs') %>
+    <section id="login" class="container px-4 pb-5 pt-4" style="background-color:#F9F9F9; height:88.5vh;">
+        <div class="row">
+            <div class="col-12 mt-5">
+                <h3 class='text-center font-weight-light'><strong>LOG IN</strong></h3>
+                <div class="row mx-auto w-50 bg-white rounded shadow-sm p-3">
+                    <div class="col mx-auto pb-4">
+                        <!-- form to deal with users logging into their accounts-->
+                        <form id="login-form" name="login-form" action="/login" method="POST">
+                            <div class="row mb-3">
+                                <!-- username -->
+                                <div class="col-md-12">
+                                    <div class="md-form">
+                                        <label for="formGroupExampleInput">Username:</label>
+                                        <input type="text" id="username" name="username" class="form-control" placeholder="Username" required/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <!-- password -->
+                                <div class="col-md-12">
+                                    <div class="md-form">
+                                        <label for="formGroupExampleInput">Password:</label>
+                                        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required/>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- submit -->
+                            <div class="text-center mx-auto">
+                                <button class="btn btn-block shadow-sm" style='background-color:#98fbca' type="submit">Sign in</button>
+                            </div>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <%- include('footer.ejs') %>

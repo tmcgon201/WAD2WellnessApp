@@ -1,0 +1,73 @@
+<%- include('header.ejs') %>
+<section id="editGoals" class="container px-4 pb-5 pt-4" style="background-color:#F9F9F9;">
+    <div class="pl-5 row">
+        <div class="pl-5 col row">
+        <div class="col-md-12"></div>
+        <!--Goals-->
+        <div class="col-md-5"><a class="fa-solid fa-arrow-left mx-0 px-0 pr-1" href="/createGoals"
+            style="text-decoration: none; color:black"></a>Back</div>
+        <div class='font-weight-light h3'><strong>Edit Goals</strong></div>
+        </div>
+    </div>
+    <div class="row mx-auto w-50 bg-white rounded shadow-sm p-3">
+        <div class="col mx-auto pb-4">
+            <% if(goals.length > 0) { %>
+                <form method="POST" action="/editGoals">
+                    <% goals.forEach(function(goal) { %>
+                        <input type="hidden" name="id" value="<%= goal._id %>">
+                        <label for="<%= goal._id %>">Goal:</label>
+                        <input type="text" class="form-control" name="<%= goal._id %>-description" value="<%= goal.goal %>">
+                        <br>
+                        <label for="category">Category:</label>
+                        <select class="form-control" name="<%= goal._id %>-category" required>
+                            <option value="Nutrition" <% if (goal.category === 'Nutrition') { %>selected<% } %>>Nutrition</option>
+                            <option value="Healthy Lifestyle" <% if (goal.category === 'Healthy Lifestyle') { %>selected<% } %>>Healthy Lifestyle</option>
+                            <option value="Fitness" <% if (goal.category === 'Fitness') { %>selected<% } %>>Fitness</option>
+                        </select>
+                        <br>
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <div class="md-form">
+                                    <label for="target">Target to achieve:</label>
+                                    <select class="form-control" name="<%= goal._id %>-target" required>
+                                        <option value="1 Week" <% if (goal.target === '1 Week') { %>selected<% } %>>1 Week</option>
+                                        <option value="2 Week" <% if (goal.target === '2 Week') { %>selected<% } %>>2 Weeks</option>
+                                        <option value="3 Week" <% if (goal.target === '3 Week') { %>selected<% } %>>3 Weeks</option>
+                                        <option value="4 Week Plus" <% if (goal.target === '4 Week Plus') { %>selected<% } %>>4 Weeks +</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <input type="hidden" name="<%= goal._id %>-id" value="<%= goal._id %>">
+                        <br>
+                    <% }); %>
+                    <script>
+                        $(function() {
+                            // loop through each goal entity
+                            $('select[name$="-target"]').each(function() {
+                                // get the current target value from the hidden input field
+                                var currentTarget = $(this).siblings('input[name$="-current-target"]').val();
+                        
+                                // set the selected option based on the current target value
+                                $(this).find('option').each(function() {
+                                    if ($(this).val() === currentTarget) {
+                                        $(this).prop('selected', true);
+                                    }
+                                });
+                            });
+                        });
+                        </script>
+                    <br>
+                    <div class="text-center mx-auto">
+                        <button class="btn btn-block shadow-sm" style='background-color:#98fbca' type="submit">Update Goals</button>
+                    </div>
+                </form>
+            <% } else { %>
+                <p>No goals to display.</p>
+            <% } %>
+        </div>
+    </div>
+</div>
+</section>
+<%- include('footer.ejs') %>

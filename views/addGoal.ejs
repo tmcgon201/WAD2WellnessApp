@@ -1,0 +1,60 @@
+<%- include('header.ejs') %>
+<section id="addGoal" class="container px-4 pb-5 pt-4" style="background-color:#F9F9F9;">
+    <div class="row">
+        <div class="col-12 mt-2">
+            <div class="pl-5 row">
+                <div class="pl-5 col row">
+                <div class="col-md-12"></div>
+                <!--add Goals-->
+                <div class="col-md-5"><a class="fa-solid fa-arrow-left mx-0 px-0 pr-1" href="/createGoals"
+                    style="text-decoration: none; color:black"></a>Back</div>
+                <div class='font-weight-light h3'><strong>Add Goal</strong></div>
+                </div>
+            </div>
+            <div class="row mx-auto w-50 bg-white rounded shadow-sm p-3">
+                <div class="col mx-auto pb-4">
+                    <!-- form -->
+                    <form id="addGoal" name="addGoal" action="/addGoal" method="POST">
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <div class="md-form">
+                                    <label for="name">Goal:</label>
+                                    <input type="text" id="goal" name="goal" class="form-control" placeholder="Goal" maxlength="20" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <div class="md-form">
+                                    <label for="category">Category:</label>
+                                    <select class="form-control" name="category" required>
+                                        <option value="Nutrition">Nutrition</option>
+                                        <option value="Healthy Lifestyle">Healthy Lifestyle</option>
+                                        <option value="Fitness">Fitness</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <div class="md-form">
+                                    <label for="target">Target to achieve:</label>
+                                    <select class="form-control" name="target" required>
+                                        <option value="1 Week">1 Week</option>
+                                        <option value="2 Week">2 Weeks</option>
+                                        <option value="3 Week">3 Weeks</option>
+                                        <option value="4 Week Plus">4 Weeks +</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center mx-auto">
+                            <input style="background-color:#98fbca" type="submit" class="btn btn-block shadow-sm" value="Submit">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<%- include('footer.ejs') %>

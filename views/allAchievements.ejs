@@ -1,0 +1,69 @@
+<style>
+  body {
+    overflow: hidden;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  th {
+    background-color: 98fbca;
+    color: black;
+    text-align: left;
+    padding: 10px;
+  }
+  
+  td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .table-responsive {
+    overflow-x: auto;
+  }
+  
+  </style>
+<%- include('header.ejs') %>
+    <section id="allAchievements" class="container px-4 pb-5 pt-4" style="background-color:#F9F9F9; height:88.5vh;">
+      <h3 class='text-center pb-4 font-weight-light'><strong><%= user.username %> 's Achievements!</strong></h3>
+        <div class="text-center pb-2 font-weight-light">
+        <p><strong>We are excited for you to see your progress! See your achievements below and add new achievements!</strong></p>
+        <div class="row">
+            <div class="pt-3 col row">
+                <div class="col-md-6 col-sm-1"></div>
+                <div class="col-md-1 col-sm-0"></div>
+                    <div class="px-0 col-4"><a class="fa-solid fa-plus pr-1" href="/recordNewAchievement" style="text-decoration: none; color:black"></a>Add Achievement</div>
+                </div>
+            </div> 
+        </div>
+        <br>
+        <table>
+            <thead>
+              <tr>
+                <th>Goal</th>
+                <th>Category</th>
+                <th>Target</th>
+                <th>Achieved On</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% goals.forEach(goal => { %>
+                <tr>
+                  <td><%= goal.goal %></td>
+                  <td><%= goal.category %></td>
+                  <td><%= goal.target %></td>
+                  <td><%= goal.achieved %></td>
+                </tr>
+              <% }) %>
+            </tbody>
+          </table>
+          <br>
+    </section>
+<%- include('footer.ejs') %>
+
